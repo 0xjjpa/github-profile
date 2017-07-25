@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Intro from './components/Intro';
+import Profile from './components/Profile';
 import registerServiceWorker from './registerServiceWorker';
 
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
+import 'bootstrap/dist/css/bootstrap-reboot.css';
 
 const store = createStore(
   () => {},
@@ -19,7 +20,10 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <Intro />
+    <div className="App">
+      <Intro />
+      <Profile />
+    </div>
   </Provider>,
   document.getElementById('root')
 );
