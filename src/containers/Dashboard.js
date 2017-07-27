@@ -1,10 +1,18 @@
 import Dashboard from '../components/Dashboard';
+import { LOAD_PROFILE } from '../constants/actions';
 import { connect } from 'react-redux';
 
-export function mapStateToProps({ profiles }) {
+const mapStateToProps = ({ profiles, profile }) => {
   return {
-    profiles
+    profiles,
+    profile
   };
-}
+};
 
-export default connect(mapStateToProps)(Dashboard);
+const mapDispatchToProps = dispatch => {
+  return {
+    onProfileClick: id => dispatch({ type: LOAD_PROFILE, id })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

@@ -1,6 +1,11 @@
 import axios from 'axios';
 import { API_URL, USERS_ENDPOINT, INITIAL_ID } from '../constants/index';
-import { LOAD_PROFILES, PROFILES_LOADED } from '../constants/actions';
+import {
+  LOAD_PROFILES,
+  PROFILES_LOADED,
+  LOAD_PROFILE,
+  PROFILE_LOADED
+} from '../constants/actions';
 
 const api = store => next => async action => {
   next(action);
@@ -13,6 +18,15 @@ const api = store => next => async action => {
       next({
         type: PROFILES_LOADED,
         loadedProfiles
+      });
+      break;
+    case LOAD_PROFILE:
+      const loadedProfile = await axios.get(
+        `${API_URL}/${USERS_ENDPOINT}/${action.id}`
+      );
+      next({
+        type: PROFILE_LOADED,
+        loadedProfile
       });
       break;
     default:

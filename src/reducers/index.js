@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import { profiles } from './profiles';
+import { profiles, profile } from './profiles';
 
 const githubDashboard = combineReducers({
-  profiles
+  profiles,
+  profile
 });
 
 export default githubDashboard;
