@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { API_URL, USERS_ENDPOINT, INITIAL_ID } from '../constants/index';
+import { EMPTY_PROFILE } from '../constants/actions';
 import {
   LOAD_PROFILES,
   PROFILES_LOADED,
@@ -21,6 +22,10 @@ const api = store => next => async action => {
       });
       break;
     case LOAD_PROFILE:
+      next({
+        type: EMPTY_PROFILE
+        /* This should be isolated as an individual action, but we are being lazy here 👀  */
+      });
       const loadedProfile = await axios.get(
         `${API_URL}/${USERS_ENDPOINT}/${action.id}`
       );

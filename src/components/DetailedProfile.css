@@ -1,0 +1,26 @@
+.DetailedProfile {
+  text-align: left;
+}
+
+.DetailedProfile__info {
+  position: relative;
+}
+
+.DetailedProfile__link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+/* This ideally should be a more specific selector */
+/*.DetailedProfile__paragraphs,*/
+.DetailedProfile p {
+  margin-bottom: 0;
+}
+
+/* This ideally should be a more specific selector */
+/*.DetailedProfile__icons,*/
+.DetailedProfile span {
+  margin-right: 5px;
+}

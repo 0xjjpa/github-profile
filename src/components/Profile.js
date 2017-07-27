@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   Card,
   CardImg,
@@ -12,12 +12,12 @@ import { Link } from 'react-router-dom';
 
 import './Profile.css';
 
-export const Profile = ({ profile, onProfileClick, isInsideModal = false }) =>
-  <Card>
+export const Profile = ({ profile, onProfileClick }) =>
+  <Card className="Profile">
     <CardImg top width="100%" src={profile.avatar_url} />
     <CardBlock>
       <CardTitle>
-        {profile.login}{' '}
+        {profile.login}
       </CardTitle>
       <CardSubtitle>
         ID - {profile.id}
@@ -25,13 +25,12 @@ export const Profile = ({ profile, onProfileClick, isInsideModal = false }) =>
       <CardText>
         Type - {profile.type}
       </CardText>
-      {!isInsideModal &&
-        <Link
-          onClick={() => onProfileClick(profile.login)}
-          className="Profile__link"
-          to={`/profile/${profile.login}`}
-        >
-          <Button bsStyle="link">Learn More</Button>
-        </Link>}
+      <Link
+        onClick={() => onProfileClick(profile.login)}
+        className="Profile__link"
+        to={`/profile/${profile.login}`}
+      >
+        <Button bsStyle="link">Learn More</Button>
+      </Link>
     </CardBlock>
   </Card>;
