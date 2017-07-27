@@ -9,7 +9,7 @@ const Dashboard = ({ profiles }) => {
     <div className="Dashboard">
       <Row>
         {profiles.map((profile, index) => {
-          return <Profile key={index} />;
+          return <Profile key={index} profile={profile} />;
         })}
       </Row>
     </div>

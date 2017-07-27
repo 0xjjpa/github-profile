@@ -1,3 +1,9 @@
 .Intro {
   text-align: center;
 }
+
+.Intro .jumbotron {
+  /* Reacstrap component */
+  margin-bottom: 1.5rem;
+  border-radius: 0;
+}
