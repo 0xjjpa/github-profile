@@ -4,6 +4,7 @@
 
 ## Technologies
 
+* Create React App 🚀 (`npm install && npm run start`)
 * React+Redux 💮
 * React Router v4 ♻️
 * Reactstrap + Bootstrap v4 💅🏻
