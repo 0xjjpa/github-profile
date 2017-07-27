@@ -3,8 +3,8 @@ import { Profile } from '../components/Profile';
 import { Row } from 'reactstrap';
 import './Dashboard.css';
 
-const Dashboard = ({ profiles }) => {
-  console.log('Profiles', profiles);
+const Dashboard = ({ id, profiles }) => {
+  console.log('Profiles', profiles, id);
   return (
     <div className="Dashboard">
       <Row>

@@ -1,3 +1,4 @@
+/* global expect */
 import React from 'react';
 import * as enzyme from 'enzyme';
 import Intro from './Intro';

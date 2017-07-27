@@ -9,6 +9,7 @@ import {
   Button,
   Col
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import './Profile.css';
 
@@ -31,7 +32,9 @@ export const Profile = ({ profile }) =>
         <CardText>
           Type - {profile.type}
         </CardText>
-        <Button>Learn More</Button>
+        <Button>
+          <Link to={`/profile/${profile.login}`}>Learn More</Link>
+        </Button>
       </CardBlock>
     </Card>
   </Col>;

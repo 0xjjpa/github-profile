@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 
-import Intro from './components/Intro';
-import Dashboard from './containers/Dashboard';
+import App from './components/App';
 
 import { LOAD_PROFILES } from './constants/actions';
 
@@ -11,6 +10,7 @@ import api from './services/api';
 import githubDashboard from './reducers/index';
 
 import { createStore, compose, applyMiddleware } from 'redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import './index.css';
@@ -30,10 +30,12 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <div className="App">
-      <Intro />
-      <Dashboard />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/profile/:id" component={App} />
+        <Route component={App} />
+      </Switch>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

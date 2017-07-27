@@ -8,7 +8,7 @@ const api = store => next => async action => {
   switch (type) {
     case LOAD_PROFILES:
       const loadedProfiles = await axios.get(
-        `${API_URL}/${USERS_ENDPOINT}?since=${INITIAL_ID}`
+        `${API_URL}/${USERS_ENDPOINT}?since=${INITIAL_ID}&per_page=12`
       );
       next({
         type: PROFILES_LOADED,
