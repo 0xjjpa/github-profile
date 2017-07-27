@@ -1,21 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Intro from './components/Intro';
-import Profile from './components/Profile';
 import registerServiceWorker from './registerServiceWorker';
 
+import Intro from './components/Intro';
+import Dashboard from './containers/Dashboard';
+
 import { LOAD_PROFILES } from './constants/actions';
+
 import api from './services/api';
+import githubDashboard from './reducers/index';
 
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+
+import './index.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-reboot.css';
 
 const store = createStore(
-  () => {},
+  githubDashboard,
   {},
   compose(
     applyMiddleware(api),
@@ -28,7 +32,7 @@ ReactDOM.render(
   <Provider store={store}>
     <div className="App">
       <Intro />
-      <Profile />
+      <Dashboard />
     </div>
   </Provider>,
   document.getElementById('root')
