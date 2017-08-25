@@ -11,18 +11,18 @@
 
 Works in Chrome + Firefox + Safari, untested in IE.
 
-## Achieved
+## Features
 
 * ✅   Proper compilation / functionality
 * ✅   Loading message (partially, ideally should be tied with proper actions, see bottom)
 * ✅   Details button takes to new user, close button takes user back
 * ✅   Server respects route (this is more of seting up the server to always deliver `index.html`)
 
-## Missing
+## Roadmap
 
-* 🔴   Loading more users (would need to parse the `link` header from API,
+* [ ]   Loading more users (would need to parse the `link` header from API,
 tie that API and update/extend API to receive a parameter).
-* 🔴   Tests for 1 Reducer + 1 Component (set up enzyme, but those were
+* [ ]  Tests for Reducers/Components (set up enzyme, but those were
 left out due lack of time for the time being)
 
 ### Tieing loading to actions
